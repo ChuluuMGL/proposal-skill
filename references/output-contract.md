@@ -14,6 +14,28 @@ The presenter script `.md` and the missing-information list are always required,
 
 For any brief / tender / RFP response, a **Brief Compliance Matrix** (`references/brief-compliance.md`) is also required — a table mapping every brief requirement to the slide + proof that addresses it. If even an HTML deck is not possible, fall back to blueprint / copy-and-script / template-spec per `runtime-compatibility.md` and label the package accordingly.
 
+## Delivery State Contract
+
+Every output must state its current delivery state. This prevents fast daily drafts from being mistaken for client-ready delivery.
+
+| State | What may be delivered | Must not claim |
+|---|---|---|
+| `结构草稿` | brief audit, winning thesis, section flow, page plan, proof-object plan | that a deck exists |
+| `可编辑初稿` | first deck/copy/script draft with assumptions marked | final accuracy, final visual QA, or client-ready status |
+| `待确认版` | deck and script exist but key information, source proof, budget, case data, or visual/open QA is incomplete | client-ready status |
+| `客户可交付版` | requested deck format, same-name script, accepted assumptions, QA evidence, and unresolved limits clearly stated | hidden unknowns or unchecked PPTX/render status |
+
+Fast mode usually produces `结构草稿` or `可编辑初稿`. It can produce `待确认版` when files exist but data or QA is incomplete. It should not produce `客户可交付版` unless the user asked for final delivery and all relevant gates pass.
+
+## Handoff Consistency Contract
+
+The final user-facing summary, same-name presenter script, and actual QA logs must agree.
+
+- If the final response says a check was completed, the presenter script's `Delivery QA` block must say the same check is completed, including any warning or limitation.
+- If the presenter script still says `待运行`, `pending`, or equivalent for PPTX/render QA, the final response must not claim those checks passed.
+- If QA is performed after the script is written, update the script QA section before delivery.
+- If a preview method is unreliable for CJK text, record that limitation in both the script and final response, and keep the delivery state at `可编辑初稿` or `待确认版` unless a reliable PowerPoint/Keynote/local preview has passed.
+
 ## File Naming
 
 Use clear names:
@@ -128,11 +150,12 @@ Rules: off by default; closing slide only; one line; fully removable; never on c
 
 After finishing, report:
 
+- delivery state: `结构草稿` / `可编辑初稿` / `待确认版` / `客户可交付版`
 - deck format delivered: `.pptx` / `.html` / `.pdf` — and why that format was chosen
 - deck path
 - script MD path
 - skill credit: off (default) / opt-in footer on closing slide
-- mode used: guided / auto / edit / audit / fallback
+- mode used: fast / proposal / bid / edit / audit / style-demo / auto / fallback
 - runtime/agent used
 - PPTX backend used, or fallback reason if unavailable
 - preview/render/open validation method used
@@ -143,3 +166,5 @@ After finishing, report:
 - rhythm summary, including where breathing slides, section resets, or big-idea pages appear
 - tests/QA performed
 - unresolved assumptions
+
+Do not let this summary drift from the files. A deck package is not considered handed off until the summary, script QA note, and actual validation evidence tell the same story.

@@ -1,8 +1,8 @@
 {
-  "name": "proposal-ppt",
-  "display_name": "Business Proposal Presentation",
-  "description": "Create stage-gated commercial proposal decks and presenter scripts with required visual-system cards, public style-template families, runtime compatibility, three-page sample gates, AI visual asset planning, font guidance, palette presets, and proof-object QA.",
-  "version": "0.4.1",
+  "name": "chuluu-proposal-ppt",
+  "display_name": "提案PPT助手",
+  "description": "面向提案、比稿、投标、路演和方案汇报的 PPT 策划、写作、设计、编辑与质检助手；新增终稿精修模式，保护人工修改、消化逐页反馈，并分层验收 PPTX/HTML/PDF 与逐字稿。",
+  "version": "0.5.0",
   "author": {
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
@@ -28,6 +28,10 @@
     "three-page style sample gate",
     "runtime compatibility",
     "pptx backend",
+    "final polish",
+    "manual edit protection",
+    "revision ledger",
+    "three-layer acceptance",
     "visual asset pipeline",
     "提案PPT",
     "商业提案",

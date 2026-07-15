@@ -8,7 +8,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.4.1-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.5.0-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -245,7 +245,7 @@ git clone https://github.com/ChuluuMGL/proposal-ppt-skill.git \
 ### 先生成蓝图，再确认
 
 ```text
-用 $proposal-ppt 根据下面 brief 做一份商业提案。
+用 $chuluu-proposal-ppt 根据下面 brief 做一份商业提案。
 
 先不要生成 deck。请先输出：
 1. Brief 审计 + 合规矩阵（逐条拆出评分项，标权重和来源）
@@ -262,7 +262,7 @@ brief:
 ### 直接生成 deck 和逐字稿
 
 ```text
-用 $proposal-ppt 直接根据下面 brief 产出：
+用 $chuluu-proposal-ppt 直接根据下面 brief 产出：
 1. 最适合当前 runtime 的提案 deck（有 PPTX 后端则 .pptx，否则 .html）
 2. 同名 Markdown 逐字稿
 3. Brief 合规矩阵（作为附录）
@@ -285,6 +285,12 @@ brief:
 - 不编造数据、案例、奖项、平台权限、报价或效果结果。
 - 明确标注未知信息，而不是隐藏或脑补。
 - 预算、KPI、负责人、验收标准和风险边界必须可见。
+
+## 已有客户 PPT 的终稿精修（v0.5.0）
+
+当当前 PPTX 已包含人工改动，且用户提供逐页反馈或截图时，使用 `edit-final-polish`。该模式先保护文字、图片位置/裁切和品牌元素，再建立 story map 与反馈台账，然后分别输出技术、视觉、商业验收结论。执行入口见 `references/final-polish-workflow.md`。
+
+程序检查通过不等于视觉或商业验收通过。
 
 ---
 
@@ -314,7 +320,7 @@ A：可以，只要对应 Agent 支持 Skill 文件夹，或能读取 `SKILL.md`
 
 | 项目 | 说明 |
 |---|---|
-| Skill 名称 | `proposal-ppt` |
+| Skill 名称 | `chuluu-proposal-ppt` |
 | 仓库 | `ChuluuMGL/proposal-ppt-skill` |
 | 形态 | 本地 Skill 文件夹，包含 `SKILL.md`、references、assets 和 metadata |
 | 主要输出 | `.pptx` + `.md` |
@@ -363,5 +369,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.4.1"
+  "softwareVersion": "0.5.0"
 } -->

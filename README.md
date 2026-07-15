@@ -8,7 +8,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.4.1-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.5.0-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -244,7 +244,7 @@ Restart your agent after installation so the skill metadata is reloaded.
 ### Blueprint first, then confirm
 
 ```text
-Use $proposal-ppt to create a business proposal from the brief below.
+Use $chuluu-proposal-ppt to create a business proposal from the brief below.
 
 Do not build the deck yet. First return:
 1. Brief audit + compliance matrix (extract every scored requirement with weight and source)
@@ -261,7 +261,7 @@ brief:
 ### Generate deck and script directly
 
 ```text
-Use $proposal-ppt to produce, from the brief below:
+Use $chuluu-proposal-ppt to produce, from the brief below:
 1. The deck format that fits this runtime (.pptx if a backend exists, else .html)
 2. A same-name Markdown presenter script
 3. The Brief Compliance Matrix (as an appendix)
@@ -284,6 +284,12 @@ brief:
 - Do not invent data, cases, awards, platform permissions, pricing, or performance results.
 - Mark unknowns clearly instead of hiding them.
 - Make budget, KPI, ownership, acceptance criteria, and risk boundaries visible.
+
+## Final-polish an existing client deck (v0.5.0)
+
+Use `edit-final-polish` when a current PPTX contains manual edits and the user supplies page-level feedback or screenshots. It preserves protected text, image geometry/crops, and brand elements; creates a story map and feedback ledger before revision; then reports technical, visual, and commercial acceptance separately. See `references/final-polish-workflow.md`.
+
+It never treats a passing package audit as visual or commercial approval.
 
 ---
 
@@ -313,7 +319,7 @@ Yes, if they support skill folders or can read `SKILL.md`-style packages. Instal
 
 | Item | Description |
 |---|---|
-| Skill name | `proposal-ppt` |
+| Skill name | `chuluu-proposal-ppt` |
 | Repository | `ChuluuMGL/proposal-ppt-skill` |
 | Format | Local skill folder with `SKILL.md`, references, assets, and metadata |
 | Primary output | `.pptx` + `.md` |
@@ -362,5 +368,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.4.1"
+  "softwareVersion": "0.5.0"
 } -->

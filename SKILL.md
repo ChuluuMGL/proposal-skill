@@ -52,6 +52,7 @@ Load only the references the current task needs. Grouped so you can pick in seco
 **Output & runtime**
 - File/script format and multi-format contract — `references/output-contract.md`
 - Runtime compatibility, PPTX backends, fallbacks — `references/runtime-compatibility.md`
+- Existing-deck final revision — `references/final-polish-workflow.md` (then load its protection, story, copy, visual-finish, adapter, and quality references as routed)
 
 Use `assets/minimal-proposal-template.pptx` only as a fallback visual asset when no client VI, reference deck, or stronger design direction is provided.
 
@@ -62,6 +63,7 @@ Default to `guided` mode unless the user explicitly asks to generate everything 
 - `guided`: Use staged checkpoints. First return brief audit, winning thesis, chapter structure, page plan, proof objects, and visual direction for confirmation. After confirmation, build the PPTX and script.
 - `auto`: If the user says to proceed directly or is under time pressure, make reasonable assumptions, mark unknowns as `待确认`, and produce the full `.pptx` plus `.md` when a PPTX backend is available. Otherwise use the best fallback mode and state the limitation.
 - `edit`: If the user provides an existing PPTX, audit and modify the deck instead of rebuilding from scratch unless the user asks for a rebuild.
+- `edit-final-polish`: Client-final revision of an existing PPTX after manual edits and page-level feedback. Establish a protected baseline before editing; produce a story map, revision ledger, presenter script, and separate technical, visual, and commercial acceptance reports. This is not permission to rebuild the deck.
 - `audit`: If the user asks for review only, do not generate a new deck. Return findings, page-level issues, and revision recommendations.
 
 In guided mode, ask only high-impact routing questions. Do not block on details that can be marked `待确认`.
@@ -140,6 +142,8 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
    - When a `.pptx` was produced, run `scripts/audit_proposal_pptx.py <deck.pptx> --script <script.md>` and resolve any errors before claiming delivery.
    - Do not claim the deck is ready until the PPTX and script are both present and checked.
 
+For `edit-final-polish`, use the Gate A–F workflow in `references/final-polish-workflow.md` instead of the ordinary edit shortcut. A passing package audit alone means `技术通过，待视觉/商业复核`; it is never evidence of client-ready final delivery.
+
 ## Hard Rules
 
 - Do not fabricate data, awards, clients, case outcomes, screenshots, platform permissions, or third-party endorsements.
@@ -160,4 +164,6 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 - Do not silently substitute deck formats. Deliver the format the user asked for; if only HTML/PDF is possible when PPTX was requested, say so and let the user choose. Never relabel an HTML, PDF, or markdown file as a finished `.pptx`.
 - Do not hide runtime limitations. If the current agent cannot generate, render, or open PPTX files, say so and deliver the best fallback package instead.
 - Do not claim a deck passed QA when a `.pptx` exists without running `scripts/audit_proposal_pptx.py`. Resolve reported errors (invalid package, placeholder leakage, missing notes, slide/script mismatch) before declaring delivery.
+- In `edit-final-polish`, do not start from an old build or regenerate protected slides. The user-designated/latest PPTX is the only baseline. Preserve protected copy, image positions/crops, and brand elements unless the revision ledger explicitly authorizes a change; record retained manual edits in the handoff.
+- Do not collapse technical, visual, and commercial QA into one “passed” statement. Report their evidence, scope, findings, and status separately using `references/quality-levels.md`.
 - Do not declare a visual page or style demo "done" by self-judgment alone. Agents cannot reliably verify rendered line-wrapping, optical overlap, or aesthetic balance. For any HTML style demo, run `scripts/audit_html_demo.mjs` to catch element overlap and boundary overflow; for any `.pptx`, run `scripts/audit_proposal_pptx.py` to catch text-box overflow and shape overlap. Then require a human visual review before treating the page as finished. An undetected ragged wrap or two overlapping text boxes read as a broken deck to a non-technical viewer and count as a delivery defect, not a cosmetic note.

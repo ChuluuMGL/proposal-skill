@@ -153,6 +153,7 @@ Use this when a style demo or prototype is produced as HTML before PPTX conversi
 - [ ] [BLOCKER] No unlicensed commercial font dependency is required.
 - [ ] Free/commercial-safe fonts or documented fallbacks are used.
 - [ ] If a preferred font is unavailable, the fallback stack in `font-system.md` is used without breaking layout.
+- [ ] For CJK decks, document font choices and any CJK preview limitation in the script or final handoff.
 - [ ] Public assets, screenshots, third-party marks, and generated visuals follow the asset rules in `visual-system-card.md`.
 - [ ] No fake client logos, platform icons, award badges, or fake screenshots appear.
 

@@ -18,6 +18,21 @@ Runtime rule:
 - Do not fail a proposal build only because a display font is missing.
 - If a public template or demo requires a non-system font for its appearance, document the font name, license, source, and fallback.
 
+## CJK PPTX Rules
+
+For Chinese, Japanese, or Korean PPTX decks, use explicit CJK font names in the generated text runs, placeholders, or theme. Do not rely only on theme placeholders such as `+mn-ea`, `+mj-ea`, `+mn-lt`, or `+mn-cs` for visible CJK text.
+
+Choose the safest installed CJK font from the fallback stack:
+
+1. `Source Han Sans SC` or `Noto Sans CJK SC` when available.
+2. `PingFang SC` on macOS.
+3. `Microsoft YaHei` on Windows.
+4. `SimSun` / `Songti SC` only for serif or emergency fallback.
+
+If a render pipeline drops CJK glyphs, treats Chinese text as blank, or exports a PDF/contact sheet with missing Chinese text, that render path has failed. Repair the font settings and rerender, or validate through another Office-compatible path such as PowerPoint, Keynote, or a reliable local preview. Do not export a client-facing PDF from a render path that drops CJK glyphs.
+
+If only structural PPTX checks passed and CJK visual/open validation is still unverified, keep the delivery state at `可编辑初稿` or `待确认版`; do not claim `客户可交付版`.
+
 ## General Fallback Stack
 
 Use installed system fonts when the target machine may not have custom fonts.
@@ -55,6 +70,8 @@ Use installed system fonts when the target machine may not have custom fonts.
 - [ ] Preferred fonts are free/commercial-safe or user-provided.
 - [ ] No commercial font is bundled without a license.
 - [ ] Missing fonts fall back without text overflow or layout breakage.
+- [ ] CJK decks use explicit CJK font names, not theme-only placeholders, for visible Chinese/Japanese/Korean text.
+- [ ] Any PDF/contact-sheet preview used for QA preserves CJK glyphs; previews with missing Chinese text are failed previews, not acceptable warnings.
 - [ ] Display/serif/pixel fonts are not used for dense body copy.
 - [ ] Font choices are documented in the presenter script or final handoff when they materially affect the visual system.
 - Do not use more than two font families per deck unless a style system explicitly needs an accent font.

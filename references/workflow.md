@@ -11,6 +11,7 @@ Determine these routing choices before writing slide content.
 - `guided`: first produce blueprint, then wait for user confirmation before building files.
 - `auto`: produce the full PPTX and script in one pass with assumptions marked when a PPTX backend is available; otherwise use the best fallback mode.
 - `edit`: modify an existing PPTX and keep the source deck's visual rules unless asked to restyle.
+- `edit-final-polish`: protect manual edits, map page-level feedback, and issue separate technical/visual/commercial acceptance reports for an existing client deck.
 - `audit`: review a proposal deck and return issues/recommendations only.
 
 Default: `guided`.
@@ -366,13 +367,15 @@ Run `quality-check.md` before final response.
 
 Run the **Brief Compliance Gate** (for brief / tender / RFP responses): every brief requirement maps to a slide + proof (`✅`); no **weighted** requirement is left a `⚠️ 缺口`; no slide is an unmapped 自嗨页. Deliver the compliance matrix as a client-facing appendix. See `references/brief-compliance.md`.
 
+For `edit-final-polish`, run `final-polish-workflow.md` Gate A–F. The final response and presenter script must state the same delivery state and validation status; if CJK render/open validation is incomplete or a preview loses glyphs, state the limitation and keep the package below `客户可交付版`.
+
 
 Final response must include:
 
 - deck format delivered: `.pptx` / `.html` / `.pdf`
 - deck path
 - script MD path
-- mode used: guided / auto / edit / audit
+- mode used: guided / auto / edit / edit-final-polish / audit
 - runtime and deck/PPTX backend used
 - template or visual source used
 - visual system card status
@@ -384,7 +387,7 @@ Final response must include:
 ### Guided Test
 
 ```text
-用 $proposal-ppt 根据下面 brief 做一份商业提案。
+用 $chuluu-proposal-ppt 根据下面 brief 做一份商业提案。
 
 先不要生成 PPTX。请先输出：
 1. Brief 审计
@@ -401,7 +404,7 @@ brief:
 ### Direct Generation
 
 ```text
-用 $proposal-ppt 直接根据下面 brief 产出一个可编辑 PPTX 和同名逐字稿 MD。
+用 $chuluu-proposal-ppt 直接根据下面 brief 产出一个可编辑 PPTX 和同名逐字稿 MD。
 
 要求：
 - 自动判断提案类型和页数
@@ -417,7 +420,7 @@ brief:
 ### Existing Deck Revision
 
 ```text
-用 $proposal-ppt 修改这个已有提案 PPTX。
+用 $chuluu-proposal-ppt 修改这个已有提案 PPTX。
 
 目标：
 - 保留原视觉风格

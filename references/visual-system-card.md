@@ -106,7 +106,9 @@ Output this card before Stage 3 slide copy or Stage 4 deck build:
 - If no VI exists, use `palette-library.md` plus the selected template family style spec.
 - If a style is expressive, state which pages must revert to business-clean layouts: budget, KPI, risk, legal, timeline, and acceptance pages usually need clarity over atmosphere.
 - The card belongs in the presenter script or project notes. It does not need to appear as a slide unless the user asks for a design-system appendix.
-- In auto mode, create the card internally and summarize it in the final deliverables. In guided mode, show it before deck build.
+- In `fast`, a compact visual-source note is enough for structure/copy drafts; create the full card before deck build or restyling.
+- In `proposal`, `bid`, `style-demo`, and strong visual routes, show the card before deck build.
+- In `auto`, create the card internally and summarize it in the final deliverables.
 
 ## Minimum Quality Bar
 

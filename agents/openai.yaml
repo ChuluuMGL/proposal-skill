@@ -1,8 +1,8 @@
 interface:
   display_name: "Business Proposal Presentation"
-  short_description: "Proposal decks, scripts, and style gates"
+  short_description: "Proposal decks, final-polish QA, scripts, and style gates"
   brand_color: "#0E5E43"
-  default_prompt: "Use $proposal-ppt in guided mode to create a business proposal deck and presenter script from my brief."
+  default_prompt: "Use $chuluu-proposal-ppt to create or final-polish a business proposal deck with a presenter script and clearly labeled QA status."
 
 policy:
   allow_implicit_invocation: true
