@@ -8,7 +8,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.5.0-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.5.1-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -25,7 +25,7 @@ Three sample pages per style family (cover · winning thesis · budget / accepta
 [![editorial-brand · cover / thesis / budget](./assets/demo/editorial-brand-3up.png)](./assets/demo/editorial-brand-3up.png)
 
 **tech-launch** — Product/interface hero, launch clarity, KPI and acceptance proof.
-[![tech-launch · cover / thesis / budget](./assets/demo/tech-launch-3up.png)(./assets/demo/tech-launch-3up.png)
+[![tech-launch · cover / thesis / acceptance](./assets/demo/tech-launch-3up.png)](./assets/demo/tech-launch-3up.png)
 
 > The HTML sources live under [`docs/demo/`](./docs/demo) — open them locally for full interactivity. Real client photography is replaced with conceptual visuals; final `.pptx` fidelity depends on the host runtime's presentation backend.
 
@@ -42,7 +42,7 @@ When the client has no VI, `proposal-ppt` routes to the **4 core template famili
 | `tech-launch` | AI, SaaS, product launches, fintech, technical solutions |
 | `consumer-lifestyle` | FMCG, food & beverage, retail, consumer goods, creator content |
 
-> The four families are specified in [`references/style-template-strategy.md`](./references/style-template-strategy.md). Any new style must pass the three-page sample gate (cover / mechanism / dense page) before scaling; styles that only suit covers are restricted to expressive pages, while budget / KPI / risk pages always fall back to clean business structure.
+> The four families are specified in [`references/style-template-strategy.md`](./references/style-template-strategy.md). `premium-boardroom` and `tech-launch` currently have reusable themes, `editorial-brand` has a self-contained HTML demo, and `consumer-lifestyle` remains a specification rather than a claimed finished public theme. Any new style must pass the three-page sample gate (chapter / body / dense page) before scaling.
 
 ### Why this skill, not another "pretty slides" tool
 
@@ -368,5 +368,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.5.0"
+  "softwareVersion": "0.5.1"
 } -->

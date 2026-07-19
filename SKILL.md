@@ -37,7 +37,7 @@ Load only the references the current task needs. Grouped so you can pick in seco
 - Brief compliance matrix (required for brief/tender responses) — `references/brief-compliance.md`
 
 **Visual**
-- Pre-build visual decision card (required) — `references/visual-system-card.md`
+- Compact pre-build visual decision card (required) — `references/visual-system-card.md`
 - Visual direction, typography, charts, screenshots — `references/visual-system.md`
 - The 4 core template families + Style DNA + three-page sample gate — `references/style-template-strategy.md`
 - Palette presets when no client VI — `references/palette-library.md`
@@ -109,7 +109,7 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 
 6. **Lock the visual system card before authoring slides**
    - Use `references/visual-system-card.md` plus the selected `templates/style-specs/*.md`.
-   - Define color roles, font ladder, image rules, chart/table rules, module grammar, density rhythm, and reject rules before drawing.
+   - Lock five decisions before drawing: visual source, semantic colors, type hierarchy, three page archetypes, and asset/proof behavior.
    - If client VI exists, translate it into roles; if no VI exists, choose a palette/template family and record the assumption.
 
 7. **Create the page plan before authoring slides**
@@ -147,6 +147,7 @@ For `edit-final-polish`, use the Gate A–F workflow in `references/final-polish
 ## Hard Rules
 
 - Do not fabricate data, awards, clients, case outcomes, screenshots, platform permissions, or third-party endorsements.
+- Do not promote a client-specific framework into the reusable skill. Brand names, proprietary method names, channel stacks, KPI names, target amounts, budget structures, phase labels, and project-specific systems belong in the client project only. Extract the reusable failure pattern or design rule, then rewrite it in project-neutral language before adding it to this skill, its examples, or its demos.
 - Do not deliver a proposal that drifts from the brief. For any brief / tender / RFP response, build a Brief Compliance Matrix (`references/brief-compliance.md`) mapping every brief requirement to a slide + proof. Block delivery while any **weighted** requirement is uncovered or any slide maps to no requirement — a beautiful but off-brief deck is a failed deliverable.
 - Do not use customer-sensitive examples in reusable templates or public skill assets.
 - Do not default to a service-list deck. Start from the client problem and decision criteria.
@@ -155,6 +156,8 @@ For `edit-final-polish`, use the Gate A–F workflow in `references/final-polish
 - Do not leave large empty placeholder frames or a visually dead lower third. If evidence is missing, mark the item compactly as `待确认` and rebalance the layout.
 - Do not make every slide dense. Insert deliberate breathing slides, section dividers, big-idea pages, or visual proof pages every 3-5 slides.
 - Do not treat a style as only a palette. If a rich style is chosen, adapt assets, typography, component language, proof objects, and page-type boundaries.
+- Do not call a deck visually strong when only its cover is designed. Chapter dividers, normal reasoning pages, image-led pages, diagrams, tables, and proof-dense pages must share one art direction while keeping visibly different page silhouettes.
+- Do not ship dark pages with weak label, panel, or body-text contrast. Normal text must target at least 4.5:1 contrast and large text at least 3:1; projector viewing may require stronger contrast.
 - Do not approve a strong style that only works on the cover. It must also handle at least one proof/mechanism page and one dense business page, or be restricted to expressive pages.
 - Do not use crude primitive shapes, oversized circles, generic cards, or decorative dots as substitutes for real style grammar.
 - Do not publish or reuse a style-rich template/demo unless full-size slides have been visually reviewed, not only contact-sheet checked.

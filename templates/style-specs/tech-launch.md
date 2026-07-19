@@ -24,6 +24,7 @@ Rules:
 - One electric signal color per page.
 - Green is status/proof only; do not use it as general decoration.
 - Rounded panels are for interface/system modules, not every business table.
+- Use one hero interface, architecture, or workflow object as the visual center; surrounding labels should explain it rather than form a wall of equal cards.
 
 ## Typography
 
@@ -67,6 +68,7 @@ Rules:
 
 - Neon glass decoration that makes proof unreadable.
 - Dashboard cards with no owner, unit, or acceptance.
+- A SaaS card wall used as the default layout for unrelated page types.
 - Decorative curves with no data meaning.
 - Broken connector lines or unbalanced empty canvas.
 - A technical page that fails to say what client decision it supports.

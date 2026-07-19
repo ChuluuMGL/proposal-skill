@@ -8,7 +8,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.5.0-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.5.1-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -16,7 +16,7 @@
 
 ### Demo
 
-每个风格家族 3 页样张（封面 · 赢标主张 · 预算 / 验收），点开图片可看大图：
+当前已公开实装的 3 个风格家族，各提供 3 页样张（封面 · 赢标主张 · 预算 / 验收），点开图片可看大图：
 
 **premium-boardroom** — 严格网格、董事会文件感、高信任 proof 页面。
 [![premium-boardroom · 封面 / 赢标主张 / 预算](./assets/demo/premium-boardroom-3up.png)](./assets/demo/premium-boardroom-3up.png)
@@ -25,7 +25,7 @@
 [![editorial-brand · 封面 / 赢标主张 / 预算](./assets/demo/editorial-brand-3up.png)](./assets/demo/editorial-brand-3up.png)
 
 **tech-launch** — 产品 / 界面 hero、发布会清晰度、KPI 与验收证明。
-[![tech-launch · 封面 / 赢标主张 / 预算](./assets/demo/tech-launch-3up.png)(./assets/demo/tech-launch-3up.png)
+[![tech-launch · 封面 / 赢标主张 / 验收](./assets/demo/tech-launch-3up.png)](./assets/demo/tech-launch-3up.png)
 
 > 需要完整交互时，HTML 源文件在 [`docs/demo/`](./docs/demo)，可本地打开。真实客户摄影已替换为概念视觉；最终 `.pptx` 保真度取决于宿主 runtime 的 presentation 后端。
 
@@ -33,7 +33,7 @@
 
 客户没有 VI 时，`proposal-ppt` 直接路由到下面 **4 个核心模板家族**。不做"100 种风格"——4 个覆盖完整提案，把精力留给论证而不是视觉兔子洞。
 
-**核心家族 · 完整 deck 覆盖**
+**核心家族 · 规则覆盖**
 
 | 家族 | 适合项目 |
 |---|---|
@@ -42,7 +42,7 @@
 | `tech-launch` | AI、SaaS、产品发布、金融科技、技术方案 |
 | `consumer-lifestyle` | FMCG、食品饮料、零售、消费品、达人内容 |
 
-> 4 个家族的完整规则见 [`references/style-template-strategy.md`](./references/style-template-strategy.md)。任何新风格上线前必须先通过三页样张门槛（封面 / 机制 / 密集页）；只适合封面的风格会被限制在表达页，预算 / KPI / 风险页一律回到清晰商务结构。
+> 4 个家族的完整规则见 [`references/style-template-strategy.md`](./references/style-template-strategy.md)。当前 `premium-boardroom` 与 `tech-launch` 已有可复用主题，`editorial-brand` 有独立 HTML 样稿，`consumer-lifestyle` 仍只有规范，不宣称已经完成公共主题。任何新风格上线前必须先通过三页样张门槛（章节 / 正文 / 密集页）。
 
 ### 为什么是这个 Skill，而不是又一个“把 PPT 做好看”的工具
 
@@ -369,5 +369,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.5.0"
+  "softwareVersion": "0.5.1"
 } -->

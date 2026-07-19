@@ -29,6 +29,25 @@ Assign each slide a density class during page planning.
 - Do not run more than two consecutive card-grid pages.
 - Do not run more than two consecutive table/matrix pages.
 
+## Section And Silhouette Rules
+
+- A chapter divider must not look like a normal content page with less text. Change at least two of these: canvas, scale, image behavior, grid, or title position.
+- Show the chapter number or chapter name prominently enough that the audience knows a new part has begun without reading the footer.
+- Plan the deck as a sequence of silhouettes: chapter/reset, thesis, split proof, system map, image-led proof, ledger/table, summary. Repeat the art direction, not the same wireframe.
+- If three neighboring pages have the same title position, same three-column body, and same conclusion strip, replace at least one with a different proof form.
+
+## Repeated-Layout Alignment
+
+When a layout is intentionally reused, make it exact:
+
+- use the same content top and bottom coordinates,
+- keep image, chart, and table blocks at the same height when they play the same role,
+- align row baselines, divider endpoints, caption rails, and conclusion bands,
+- keep gutters and internal padding identical,
+- compare the pages side by side at full size.
+
+Near alignment reads as a mistake; exact alignment reads as a system.
+
 ## Page Balance Rules
 
 Use the full content field deliberately.
@@ -169,5 +188,7 @@ At contact-sheet size, the deck should show:
 - no obvious blank lower thirds,
 - clear section transitions,
 - consistent but not monotonous colors.
+
+Use the contact sheet to inspect page silhouettes and chapter visibility. Then inspect every slide full-size for type, crop, contrast, baseline, and optical balance. A contact sheet cannot approve detail quality.
 
 If the contact sheet looks like 20 versions of the same slide, revise the rhythm before delivery.

@@ -42,6 +42,7 @@ Rules:
 - Prefer product scenes, shelf/catalog images, package shots, creator screenshots, live-room stills, store/event images, product cutouts.
 - Use consistent image ratios per page: 16:9 for scene, 1:1 for product tile, 9:16 for mobile screenshot.
 - Each image needs a label: asset produced, channel role, conversion path, or proof value.
+- Product cutouts must be clean enough to sit on the page without visible halo, jagged edges, or mismatched shadow; otherwise keep the original scene crop.
 - Do not stack images randomly or let photos overlap without a clear editorial reason.
 
 ## Charts And Tables

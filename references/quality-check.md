@@ -66,11 +66,16 @@ Check every slide:
 - [ ] Standard and proof-dense pages use the lower third deliberately through proof, conclusion, timeline, source status, or a visual anchor.
 - [ ] Every 3-5 slides, the deck changes rhythm through a section divider, big-idea slide, visual proof page, quote, summary, or low-density transition.
 - [ ] Margins, title positions, page numbers, and footer/source style are consistent.
+- [ ] Chapter dividers are visually unmistakable and cannot be confused with normal body pages.
+- [ ] The deck has visible silhouette variation across chapter, reasoning, image-led, diagram, and proof-dense pages without changing art direction.
+- [ ] Repeated split/table/image layouts share exact top and bottom coordinates, proof-block heights, baselines, gutters, and conclusion-strip positions.
 - [ ] Tables, ledgers, cards, and column modules have enough internal safety distance: text is not visually attached to dividers, borders, or vertical rules.
 - [ ] Tables have clear headers, units, assumptions, and exclusions.
 - [ ] Screenshots are cropped cleanly and aligned.
+- [ ] Images preserve the intended subject, product, face, UI focus, and text-safe area; image, caption, and conclusion read as one proof object.
 - [ ] No meaningless decoration, fake logos, low-resolution images, or stretched media.
 - [ ] Palette does not become a one-color monotone or cheap gradient theme.
+- [ ] Dark pages maintain at least 4.5:1 contrast for normal text and 3:1 for large text, with stronger contrast when projector viewing is likely.
 - [ ] When no VI is provided, a named palette from `palette-library.md` is selected and applied consistently.
 
 ## 5. Rich Style Gate

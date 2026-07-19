@@ -1,122 +1,81 @@
-# Visual System Card Gate
+# Compact Visual System Card
 
-Use this file before drawing a new proposal deck or restyling an existing one. The visual system card is a short, user-visible contract that makes the deck more beautiful by forcing visual decisions before slide production starts.
+Use this gate before drawing a new deck or restyling an existing one. Its job is to lock a small number of visual decisions early, not create a design document for its own sake.
 
-Do not skip this gate when:
+The card is required when:
 
-- the user has no client VI or reference deck,
-- a public template family is selected,
-- a rich style is requested,
-- the deck will include charts, budget pages, screenshots, product images, or proof galleries,
-- a previous draft had crowding, dead whitespace, text overflow, or inconsistent color.
+- no strict client VI or reference deck exists,
+- a public template family or strong visual route is selected,
+- the deck includes images, charts, screenshots, or proof-dense pages,
+- a previous draft had inconsistent style, crowding, weak contrast, bad crops, or repeated layouts.
 
-If the user provides a strict client template, keep the template as the source of truth and still produce a short "inherited visual rules" card before editing.
+If a strict client template exists, inherit it and record only the rules needed to edit safely.
 
-## Required Visual System Card
+## Required Card
 
-Output this card before Stage 3 slide copy or Stage 4 deck build:
+Keep the completed card to roughly one screen or one page.
 
 ```markdown
 ## 视觉系统卡
 
-### 1. 模板与商业理由
+### 1. 视觉来源与方向
 
-- 模板家族：
-- 适合本案的原因：
-- 不适合承载的页面：
-- 需要先测试的样张：
+- 来源优先级：客户 VI / 参考稿 / 模板家族 / 自定义方向
+- 选定方向：
+- 商业理由：
+- 禁止偏离：
 
-### 2. 色彩系统
+### 2. 色彩与字体
 
-| 角色 | Hex / 来源 | 用法 | 限制 |
+| 角色 | 选择 | 使用规则 |
+|---|---|---|
+| 主背景 / 深色背景 |  |  |
+| 主文字 / 次级文字 |  |  |
+| 主色 / 强调色 / 风险色 |  |  |
+| 标题 / 正文 / 数字 / 脚注 |  |  |
+
+### 3. 三类页面
+
+| 页面 | 视觉语法 | 主要证明对象 | 密度 |
 |---|---|---|---|
-| 主背景 |  |  |  |
-| 主文字 |  |  |  |
-| 品牌/主色 |  |  |  |
-| 强调色 |  |  |  |
-| 风险/警示 |  |  |  |
-| 线条/分割 |  |  |  |
+| 章节 / 转场 |  |  | breathing |
+| 正文 / 论证 |  |  | standard |
+| 证据 / 密集页 |  |  | proof-dense |
 
-### 3. 字体系统
+### 4. 图片、图表与模块
 
-| 层级 | 字体 | 字号范围 | 字重 | 行距 | 规则 |
-|---|---|---|---|---|---|
-| 封面/章节标题 |  |  |  |  |  |
-| 普通页标题 |  |  |  |  |  |
-| 正文 |  |  |  |  |  |
-| 数据/数字 |  |  |  |  |  |
-| 脚注/来源 |  |  |  |  |  |
+- 图片来源、比例、裁切焦点、字幕方式：
+- 图表、表格、模型图的统一样式：
+- 同构页面需要统一的高度、基线、间距：
+- 深色页面的对比度与强调色限制：
 
-### 4. 图片与资产规则
+### 5. Reject Rules
 
-| 资产类型 | 用途 | 来源 | 裁切/比例 | 禁止事项 |
-|---|---|---|---|---|
-| 产品/场景图 |  |  |  |  |
-| 平台截图 |  |  |  |  |
-| AI 概念图 |  |  |  |  |
-| 图标/插画 |  |  |  |  |
-
-### 5. 图表与数据规则
-
-| 图表类型 | 推荐样式 | 标注方式 | 禁止事项 |
-|---|---|---|---|
-| KPI 数字 |  |  |  |
-| 表格/预算 |  |  |  |
-| 折线/趋势 |  |  |  |
-| 矩阵/对比 |  |  |  |
-| 时间轴/路线图 |  |  |  |
-
-### 6. 模块系统
-
-| 页面/模块 | 布局规则 | Proof object | 密度 |
-|---|---|---|---|
-| 封面 / Big idea |  |  |  |
-| Brief 翻译 |  |  |  |
-| 策略地图 |  |  |  |
-| 机制 / 系统图 |  |  |  |
-| 案例 / 样稿 |  |  |  |
-| KPI / 验收 |  |  |  |
-| 预算 / 边界 |  |  |  |
-| 风险控制 |  |  |  |
-
-### 7. 页面节奏
-
-| 页码范围 | 密度 | 作用 | 处理方式 |
-|---|---|---|---|
-|  | breathing | 让客户记住主张 |  |
-|  | standard | 推进论证 |  |
-|  | proof-dense | 证明可交付 |  |
-
-### 8. Reject Rules
-
-- 若出现以下问题，必须重做而不是小修：
-- 文本溢出或压线：
-- 一侧拥挤、一侧空：
-- 下三分之一误留白：
-- 同一风格只剩配色差异：
-- 图表像装饰而非证据：
-- 图片无法说明商业判断：
+- 章节页像普通正文页：
+- 三类页面使用同一个卡片模板：
+- 文字溢出、异常换行、贴线或对比不足：
+- 图片主体裁偏、抠图粗糙、图片与结论脱节：
+- 同构页面的表格/图片高度或间距不一致：
+- 下三分之一无意留白或靠色块填空：
 ```
 
 ## Gate Rules
 
-- The visual system card must name concrete colors, font stacks, component treatments, and reject rules. Do not write only mood words such as "premium", "clean", or "young".
-- The card must explain why the visual direction helps the client decide, not merely why it looks good.
-- If client VI exists, translate it into usage roles instead of inventing a new palette.
-- If no VI exists, use `palette-library.md` plus the selected template family style spec.
-- If a style is expressive, state which pages must revert to business-clean layouts: budget, KPI, risk, legal, timeline, and acceptance pages usually need clarity over atmosphere.
-- The card belongs in the presenter script or project notes. It does not need to appear as a slide unless the user asks for a design-system appendix.
-- In `fast`, a compact visual-source note is enough for structure/copy drafts; create the full card before deck build or restyling.
-- In `proposal`, `bid`, `style-demo`, and strong visual routes, show the card before deck build.
-- In `auto`, create the card internally and summarize it in the final deliverables.
+- Use concrete colors, font stacks, crop behavior, and reject rules. Mood words such as `高级`, `简洁`, or `年轻` are not decisions.
+- Explain how the direction helps the client understand or decide; do not justify it only by appearance.
+- If client VI exists, translate it into semantic roles instead of inventing a replacement palette.
+- If no VI exists, use one selected template family and one palette; do not blend several families.
+- Keep budget, KPI, risk, legal, timeline, and acceptance pages business-clean even when expressive pages are image-led.
+- In `guided`, show the compact card before full build. In `auto`, create it internally and summarize the chosen direction in the handoff.
+- The card belongs in project notes or the presenter script unless the user requests a design-system appendix.
 
 ## Minimum Quality Bar
 
-Reject the visual direction if:
+Reject the direction if:
 
-- the system only changes colors while reusing the same generic card layout,
-- the proof-dense page cannot remain readable at 16:9,
-- the chart/table rules are missing,
-- image behavior is undefined,
-- the lower third has no planned role,
-- the style cannot handle at least cover, mechanism, and proof-dense pages.
+- it only changes colors,
+- chapter, body, and proof-dense pages are not visibly differentiated,
+- repeated layouts cannot align exactly,
+- image behavior or proof-object behavior is undefined,
+- dark pages fail readable contrast,
+- the style cannot carry both a persuasive opening and a dense editable business page.

@@ -2,6 +2,30 @@
 
 Use client VI first. Use a user-provided reference deck before any fallback style. Use this guide only when no stronger visual source exists. For page density and rhythm, use `layout-rhythm.md`. For richer default color choices, use `palette-library.md`. For reusable public template families and the three-page sample gate, use `style-template-strategy.md`. For component-level style transformations, use `style-template-strategy.md`, `visual-system-card.md`, and `font-system.md`.
 
+## Visual Strength Standard
+
+Strong proposal design is not a layer of decoration. It is the visible organization of the argument. Judge the direction on five things:
+
+1. **Chapter grammar** — a section opening must be unmistakable at a glance through a canvas shift, chapter number, one decisive sentence, and a clear cue to what follows.
+2. **Body-page hierarchy** — a normal reasoning page needs one dominant claim, one proof form, and one conclusion path; it should not read like a stack of independent widgets.
+3. **Content-form fit** — choose the form that best explains the evidence: chart for comparison or change, system map for causality, table for accountability, image for a real scene or artifact, editorial spread for a cultural or brand argument.
+4. **Cross-page art direction** — typography, crop behavior, rules, captions, chart treatment, and accent logic stay coherent while page silhouettes vary.
+5. **Projection readability** — contrast, line weight, type size, and internal spacing must survive a meeting-room screen, not only a laptop preview.
+
+A strong route should be recognizable after removing logos and decorative labels. If it becomes a generic card grid, the direction has not been designed deeply enough.
+
+## Page Archetypes
+
+Lock at least these three archetypes before scaling a deck:
+
+| Archetype | Visual job | Required behavior |
+|---|---|---|
+| Chapter / reset | Make a narrative turn visible | One sentence, chapter marker, deliberate canvas or image shift; no table disguised as a divider |
+| Reasoning / body | Advance one commercial judgment | One dominant axis, one proof form, controlled support copy, clear lower-third role |
+| Proof-dense | Make delivery, data, boundary, or acceptance inspectable | Shared baselines, readable units and labels, clear conclusion; density without spreadsheet clutter |
+
+Do not reuse one composition for all three. The art direction should stay the same; the page silhouette should change.
+
 ## Visual Style Families
 
 Choose one primary family, then pick a specific palette from `palette-library.md`. If no client VI exists, first route to one of the four public template families in `style-template-strategy.md`: `premium-boardroom`, `editorial-brand`, `tech-launch`, or `consumer-lifestyle`. If the user asks for a specific custom style such as magazine, launch, cinematic, Web3, pixel, oil, or e-reader, use `style-template-strategy.md` as a transformation reference instead of merely changing colors. Do not reuse the same green/gold palette for every proposal.
@@ -68,6 +92,7 @@ Use for AI, SaaS, digital platforms, automation, data, and productized services.
 - Use page numbers as two digits when appropriate: `01`, `02`, `03`.
 - Before drawing a slide, choose a named layout recipe from `layout-rhythm.md`; after drawing, check whether the page still looks balanced when the title is hidden.
 - In strong style decks, each repeated component should inherit the style grammar. A Web3 proof object can be a glass dashboard; a magazine proof object can be a captioned clipping board; a pixel mechanism can be a quest path. Ordinary rounded cards are allowed only when the chosen style calls for them.
+- When two or more slides share the same split layout, align the top of the proof block, the bottom of the proof block, the table/image height, and the conclusion strip. Similar pages should look intentionally templated, not approximately arranged.
 
 ## Typography
 
@@ -112,12 +137,14 @@ Rules:
 - Use images only when they prove a commercial judgment or show real execution.
 - Prefer real products, real scenes, platform screenshots, case screenshots, sample boards, and data dashboards.
 - Crop screenshots cleanly.
+- Crop around the subject and the argument, not around the original image center. Check faces, hands, products, UI focus, and text-safe space at full-slide size.
 - Use consistent frame style for screenshot groups.
 - Do not stretch images.
 - Do not rely on stock-looking dark, blurred, decorative images to carry the argument.
 - Cite or label third-party sources when needed.
 - For AI-generated images, HTML/SVG backgrounds, or texture assets, follow `visual-system-card.md`.
 - Keep commercial text, tables, budgets, KPI, and risk controls editable whenever possible. Use generated/HTML assets mainly as background, texture, collage, or hero visual layers.
+- Treat image, caption, and conclusion as one proof object. A floating image beside an unrelated text block is not visual integration.
 
 ## Minimal Template Asset
 

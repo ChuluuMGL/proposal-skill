@@ -29,6 +29,24 @@
   font-family: var(--font-sans);
 }
 
+/* Light working surface: use for body, governance, table, and proof pages.
+   Dark canvas remains the cover/chapter/thesis reset. */
+.slide.premium-boardroom.light {
+  --canvas: #f4f1ea;
+  --canvas-2: #e7ecef;
+  --panel: #dce5e8;
+  --paper: #15212b;
+  --ink: #15212b;
+  --ink-soft: #425563;
+  --muted: #5b6c75;
+  --rule: #ccd5da;
+  --rule-2: #b8c4ca;
+  --steel: #2f6f93;
+  --ochre: #93651f;
+  --alert: #aa4f39;
+  background: var(--canvas);
+}
+
 /* font posture: sans-led. Override the base serif defaults. */
 .premium-boardroom .topbar .brand,
 .premium-boardroom .eyebrow,

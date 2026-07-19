@@ -8,11 +8,15 @@ Formal, restrained, board-document clarity. Use when the client must believe the
 
 | Role | Hex | Use |
 |---|---|---|
-| Deep canvas | `#0F1A24` | Dark full-slide background for strategy, governance, budget, and proof pages |
-| Panel | `#16242F` / `#1B2C38` | Secondary panels, sidebars, evidence blocks |
+| Light canvas | `#F4F1EA` | Default canvas for body, governance, budget, and proof pages |
+| Light surface | `#FFFFFF` | Tables, evidence objects, and quiet side panels |
+| Deep canvas | `#0F1A24` | Cover, chapter divider, and rare thesis reset only |
+| Panel | `#16242F` / `#E7ECEF` | Dark or light evidence panels according to canvas |
 | Warm text | `#F3ECE0` | Primary text on dark canvas |
+| Dark ink | `#15212B` | Primary text on light canvas |
 | Soft text | `#C4D0D8` | Body copy, captions, lower hierarchy |
 | Muted text | `#8294A0` | Folios, source notes, metadata |
+| Light muted | `#5B6C75` | Folios, source notes, metadata on light canvas |
 | Rule | `#2C4150` | Thin grid lines and dividers |
 | Steel accent | `#6FA8C7` | Key thesis emphasis, section markers, selected labels |
 | Ochre accent | `#C79A4B` | Figures, budget totals, acceptance highlights |
@@ -21,7 +25,8 @@ Formal, restrained, board-document clarity. Use when the client must believe the
 Rules:
 
 - Use only one accent family per page: steel or ochre, not both everywhere.
-- Keep backgrounds dark and quiet; avoid gradients and glowing effects.
+- Use light pages as the default working surface. Reserve dark canvas for cover, chapter, and decisive thesis pages so the deck has rhythm and proof pages stay readable.
+- Avoid gradients and glowing effects.
 - Alert color must indicate a real risk or boundary, never decoration.
 
 ## Typography
@@ -67,6 +72,7 @@ Rules:
 ## Reject Rules
 
 - Generic rounded-card dashboard.
+- An all-dark deck with no chapter/body contrast.
 - Decorative blue/gold blocks without proof.
 - Too many accent colors on one slide.
 - Dead lower third under a table.

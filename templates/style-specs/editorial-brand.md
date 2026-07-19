@@ -41,6 +41,7 @@ Rules:
 ## Image And Asset Behavior
 
 - Prefer product macro, lifestyle scene, campaign still, creator/sample image, cultural reference, or art-directed AI concept image.
+- Every three-page style sample must include at least one real or clearly conceptual hero image unless the selected direction is explicitly typography-led.
 - Crop images like magazine spreads: one dominant image or a deliberate proof board, not random equal cards.
 - Every image needs a caption rail or adjacent explanation.
 - Do not use generic stock atmosphere, blurry hands, or low-resolution screenshots.
@@ -67,6 +68,7 @@ Rules:
 
 - Cream background plus serif title with no image/proof logic.
 - Repeated equal cards pretending to be editorial.
+- A typography-led demo that claims to be image-led without showing image behavior.
 - Image without business caption.
 - Budget/KPI page becomes art board and loses readability.
 - Real or fake client brand names in public demos.

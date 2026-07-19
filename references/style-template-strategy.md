@@ -124,8 +124,8 @@ The relationship is:
 
 For a new style family, visual route, or public reusable template, do not build a full deck first. Build or specify three sample pages:
 
-1. `cover-or-big-idea`: the style must be recognizable at first glance.
-2. `strategy-or-mechanism`: the style must support commercial reasoning, not only atmosphere.
+1. `chapter-or-big-idea`: the style must make a narrative reset recognizable at first glance.
+2. `strategy-or-mechanism`: a normal body page must support commercial reasoning, not only atmosphere.
 3. `proof-dense`: budget, KPI, risk, timeline, or brief-coverage content must remain readable and editable.
 
 Gate rules:
@@ -135,6 +135,17 @@ Gate rules:
 - If the style disappears when the title text is removed, reject the system.
 - If proof-dense pages become image screenshots or unreadable art boards, reject the system.
 - If the lower third is accidentally empty, add a conclusion band, rebalance the layout, or convert the slide to a deliberate breathing page.
+- If the three pages share the same title/body/footer silhouette, reject the system even when the colors and components are polished.
+- If chapter, body, and dense pages look like three unrelated templates, reject the system for lack of art-direction continuity.
+
+## Case-To-Rule Boundary
+
+Reusable visual and workflow rules may be learned from client projects, but client project content must not enter the core skill.
+
+- Keep out brand names, proprietary method names, project-specific channel combinations, KPI labels, target amounts, budget categories, phase names, and system stacks.
+- Convert a case lesson into a neutral rule such as `repeated split pages need identical proof-block heights` or `next-step pages belong after the current-scope conclusion`.
+- Public demos must use neutral fictional content and clearly mark all figures as conceptual placeholders.
+- A route-specific term is allowed only inside its route or neutral demo when it represents a common proposal type; it must not become a universal default.
 
 ## Reference Imitation Score
 
