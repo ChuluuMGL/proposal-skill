@@ -10,7 +10,8 @@
  *   1. element-to-element text overlap (reads as a broken deck)
  *   2. boundary overflow / internal clipping
  *
- * Requires Playwright. If the codex runtime copy is present it is used,
+ * Requires Playwright. Set PLAYWRIGHT_MODULE_PATH to point at a specific
+ * Playwright install (e.g. a runtime-bundled node_modules/playwright);
  * otherwise a normal `playwright` require is attempted.
  *
  * Usage:
@@ -27,10 +28,7 @@ import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
 function loadPlaywright() {
-  const candidates = [
-    "/Users/chuluu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
-    "playwright",
-  ];
+  const candidates = [process.env.PLAYWRIGHT_MODULE_PATH, "playwright"].filter(Boolean);
   for (const c of candidates) {
     try { return require(c).chromium; } catch { /* try next */ }
   }
