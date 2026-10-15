@@ -1,0 +1,57 @@
+name: Tag on version bump
+
+# Keeps skill.json version, the git tag, and the GitHub Release locked in step.
+#
+# On every push to main, if skill.json's version has no matching v<x.y.z> tag,
+# this creates the tag + a generated-notes release. This prevents the drift seen
+# at 0.5.1 (skill.json claimed 0.5.1 while the latest tag was v0.4.1).
+# The version-consistency check runs first so a half-done bump is not tagged.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tag-on-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Version consistency (skill.json / README badges / CHANGELOG)
+        run: python3 scripts/check_release_consistency.py
+
+      - name: Create tag + release if skill.json version is untagged
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          VERSION=$(jq -r '.version' skill.json)
+          TAG="v${VERSION}"
+          echo "skill.json version: ${VERSION} -> candidate tag: ${TAG}"
+
+          if [[ ! "${VERSION}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Version ${VERSION} is not a clean semver; skipping auto-tag."
+            exit 0
+          fi
+
+          if git ls-remote --tags origin "refs/tags/${TAG}" | grep -q "${TAG}"; then
+            echo "Tag ${TAG} already exists on origin; nothing to do."
+            exit 0
+          fi
+
+          echo "No existing ${TAG}; creating tag + release..."
+          gh release create "${TAG}" \
+            --title "proposal-ppt-skill ${TAG}" \
+            --generate-notes \
+            --target "${GITHUB_SHA}"
+          echo "Created ${TAG}."

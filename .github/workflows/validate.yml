@@ -1,0 +1,57 @@
+name: Validate
+
+# Runs the maintainer's local checks in CI: metadata parses, the version is
+# consistent across skill.json / READMEs / CHANGELOG, every script compiles,
+# and the bundled fallback deck passes the objective PPTX audit in template
+# mode. No external deps; the audit and checks are stdlib-only.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Metadata + version consistency + scripts + template audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: JSON parses (skill.json)
+        run: python3 -m json.tool skill.json >/dev/null
+
+      - name: Version consistency (skill.json / README badges / CHANGELOG)
+        run: python3 scripts/check_release_consistency.py
+
+      - name: Python scripts compile
+        run: python3 -m py_compile scripts/*.py
+
+      - name: Node scripts parse
+        run: |
+          set -euo pipefail
+          for f in scripts/*.mjs; do
+            node --check "$f"
+            echo "ok: $f"
+          done
+
+      - name: No maintainer-local paths
+        run: |
+          if grep -rnI --exclude-dir=.git -E '/Users/[A-Za-z0-9_.-]+/' .; then
+            echo "Found machine-specific /Users/ paths; use relative paths or env vars."
+            exit 1
+          fi
+
+      - name: Audit bundled fallback template deck
+        run: python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --template
