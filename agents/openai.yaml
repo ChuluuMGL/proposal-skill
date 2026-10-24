@@ -1,8 +1,8 @@
 interface:
-  display_name: "Business Proposal Presentation"
-  short_description: "Proposal decks, final-polish QA, scripts, and style gates"
+  display_name: "商业提案 · PPT 与网页"
+  short_description: "Proposal logic, editable PPT, interactive HTML, and QA"
   brand_color: "#0E5E43"
-  default_prompt: "Use $chuluu-proposal-ppt to create or final-polish a business proposal deck with a presenter script and clearly labeled QA status."
+  default_prompt: "Use $proposal to create or revise a commercial proposal in PPT or interactive HTML, connecting diagnosis to delivery and reporting format-specific QA."
 
 policy:
   allow_implicit_invocation: true

@@ -7,6 +7,23 @@ reconstructed from git history (`skill.json` version bumps and existing tags).
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-24
+
+### Changed
+
+- Unified skill metadata and invocation as `proposal`; repository renamed to `proposal-skill`. Existing PPT final-polish, manual-edit protection, and layered acceptance remain available.
+- Titles may be precise subjects or supported conclusions. Responsive web proposals are distinct from fixed 16:9 HTML decks, and multi-format output shares content rather than forcing one layout across media.
+- The entrypoint now routes by task and output format; routine edits do not restart all approval stages.
+
+### Added
+
+- Diagnosis-to-delivery traceability, purpose-based web interaction guidance, responsive and deployment acceptance, and an iteration-learning process.
+- Anonymized before/after revision cases and a dependency-free neutral web behavior starter: cycle, gallery dialog, timeline, inquiry demo, exact two-state scroll pricing, navigation and appendix.
+- Starter keyboard, reduced-motion, mobile, no-JS and print handling. Client materials, credentials, prices and proprietary frameworks are excluded.
+- Release validation scope is recorded in `docs/validation-0.6.0.md`; component checks do not claim a new full PPT generation or real-device acceptance.
+
+
+
 ### Added
 
 - `.github/workflows/validate.yml`: CI checks for JSON metadata, version consistency, script syntax, and a template-mode audit of the bundled fallback deck.

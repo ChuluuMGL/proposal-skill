@@ -38,7 +38,7 @@ Use this format in the final handoff or internal QA note:
 Check every slide:
 
 - [ ] [BLOCKER] One slide has one core judgment.
-- [ ] [BLOCKER] Slide title is a conclusion sentence, not a vague noun.
+- [ ] [BLOCKER] Title accurately names the subject or states a supported conclusion; it is not an empty slogan.
 - [ ] [BLOCKER] A visible proof object supports the title.
 - [ ] The slide has an obvious reason to exist in the story.
 - [ ] Long reasoning is in the presenter script, not the slide body.
@@ -57,7 +57,7 @@ Check every slide:
 
 ## 4. Visual And Layout Gate
 
-- [ ] [BLOCKER] Deck is 16:9 unless the user requested another ratio.
+- [ ] [BLOCKER] PPT/staged HTML uses the chosen slide ratio; responsive HTML reflows at the required viewport sizes.
 - [ ] [BLOCKER] No unreadable text below 8 pt.
 - [ ] [BLOCKER] No accidental overlap, clipping, broken connectors, or text overflow.
 - [ ] [BLOCKER] No page has major content clustered in one corner or one half unless deliberately balanced by a visual anchor.
@@ -118,7 +118,7 @@ For public demos, full-size visual inspection is mandatory for every slide. Cont
 
 Use this when a style demo or prototype is produced as HTML before PPTX conversion.
 
-- [ ] [BLOCKER] The HTML demo uses a fixed 16:9 slide stage and scales the whole stage, instead of reflowing slide content by browser width.
+- [ ] [BLOCKER] Fixed-stage demos use the chosen slide geometry; responsive proposals use the separate viewport/state checks in web-proposals.md.
 - [ ] [BLOCKER] Full-size PNG screenshots were rendered and inspected for every public-demo slide.
 - [ ] [BLOCKER] Visual review confirms text is not attached to dividers, borders, image masks, or column rules.
 - [ ] [BLOCKER] Visual review confirms no image/caption/component stack obscures the intended reading order.
@@ -174,3 +174,7 @@ Use this when a style demo or prototype is produced as HTML before PPTX conversi
 - Deck that looks good but cannot answer why the client should choose this vendor.
 - Style library that uses the same card component under different style names.
 - Runtime that cannot generate PPTX but still claims a finished PowerPoint was delivered.
+
+## Responsive HTML and live delivery
+
+Use the behavior and viewport checklist in [web-proposals.md](web-proposals.md). Record reverse-scroll boundaries, dialogs/focus, media, exact price states, reduced motion and live access checks where relevant. The fixed-stage `.slide` audit is not evidence of responsive or production correctness.

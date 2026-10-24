@@ -10,11 +10,11 @@ Determine these routing choices before writing slide content.
 
 - `guided`: first produce blueprint, then wait for user confirmation before building files.
 - `auto`: produce the full PPTX and script in one pass with assumptions marked when a PPTX backend is available; otherwise use the best fallback mode.
-- `edit`: modify an existing PPTX and keep the source deck's visual rules unless asked to restyle.
+- `edit`: modify an existing PPTX or HTML proposal and keep the source deck's visual rules unless asked to restyle.
 - `edit-final-polish`: protect manual edits, map page-level feedback, and issue separate technical/visual/commercial acceptance reports for an existing client deck.
 - `audit`: review a proposal deck and return issues/recommendations only.
 
-Default: `guided`.
+Default: `guided` for new proposals with unresolved strategic choices. Existing authorization and approved decisions satisfy the corresponding checkpoint; narrow edits do not restart all gates.
 
 ### Proposal Route
 
@@ -76,7 +76,7 @@ Route the deck format by use case and runtime capability — a first-class decis
 | Web present, embed, animate, or highest fidelity | `.html` |
 | Email / print / procurement submission | `.pdf` (rendered from HTML or PPTX) |
 | No PPTX backend available | `.html` as the default deck (still a complete proposal), `.pdf` on demand — do not silently downgrade to blueprint-only |
-| User wants several | build the HTML deck first, then export PDF and/or PPTX from the same source |
+| User wants several | use one approved content ledger with separate editable PPT and responsive web layouts; export PDF from a validated source |
 
 Default when unspecified + PPTX backend exists: `.pptx`. Default when unspecified + no PPTX backend: `.html`. Confirm the format in the Stage 0 summary whenever it could affect the client (e.g. a tender that mandates native PPTX).
 
@@ -91,7 +91,7 @@ Image-generation backend:
 Fallback mode if PPTX backend is unavailable:
 ```
 
-If no PPTX backend is available, default the **deck** to `.html` (a complete proposal, not a sketch) and offer `.pdf` export. Reserve `blueprint-only`, `copy-and-script`, `template-spec` fallbacks for when even an HTML deck cannot be produced, and state the limitation clearly.
+If no PPTX backend is available and the format is open, use `.html` (a complete proposal, not a sketch) and offer `.pdf` export when supported. If PPTX is explicitly required, disclose the limitation and confirm any replacement. Reserve `blueprint-only`, `copy-and-script`, `template-spec` fallbacks for when even an HTML deck cannot be produced, and state the limitation clearly.
 
 ## Stage 0 Output
 
@@ -155,7 +155,7 @@ For open creative pitches with no stated criteria, infer 3–7 decision criteria
 
 ## Stage 2: Proposal Blueprint
 
-Create the commercial logic before slide copy.
+Create the commercial logic before slide copy. Build the compact evidence → diagnosis → recommendation → deliverable → schedule/cost map in `argument-traceability.md`; use it to catch unsupported or disconnected pages.
 
 Required output:
 
@@ -316,7 +316,7 @@ For each slide, draft:
 Quality gate:
 
 - One slide = one judgment.
-- Slide title is a conclusion sentence.
+- Slide title is a precise subject or an evidenced conclusion; use the page job to decide.
 - Every slide has a visible proof object.
 - No slide depends on long oral explanation to make sense.
 
@@ -325,7 +325,7 @@ Quality gate:
 Build or edit the deck after the copy draft is stable. The format was chosen in Stage 0 (Output Format).
 
 - For `.pptx`: use the identified PPTX backend and its QA rules from `runtime-compatibility.md`; produce editable objects, not screenshots.
-- For `.html`: build a self-contained 16:9 staged deck (one `slide-shell` per slide, flow-first); this is the default when no PPTX backend exists and a proud primary when fidelity/animation matters.
+- For `.html`: select responsive web proposal or fixed 16:9 staged deck. Read `web-proposals.md` for responsive layout, interaction and release acceptance; do not enforce slide geometry on phones.
 - For `.pdf`: export from the finished HTML (headless print) or PPTX — never hand-layout a separate PDF.
 
 Build order:
@@ -387,7 +387,7 @@ Final response must include:
 ### Guided Test
 
 ```text
-用 $chuluu-proposal-ppt 根据下面 brief 做一份商业提案。
+用 $proposal 根据下面 brief 做一份商业提案。
 
 先不要生成 PPTX。请先输出：
 1. Brief 审计
@@ -404,7 +404,7 @@ brief:
 ### Direct Generation
 
 ```text
-用 $chuluu-proposal-ppt 直接根据下面 brief 产出一个可编辑 PPTX 和同名逐字稿 MD。
+用 $proposal 直接根据下面 brief 产出一个可编辑 PPTX 和同名逐字稿 MD。
 
 要求：
 - 自动判断提案类型和页数
@@ -420,12 +420,12 @@ brief:
 ### Existing Deck Revision
 
 ```text
-用 $chuluu-proposal-ppt 修改这个已有提案 PPTX。
+用 $proposal 修改这个已有提案 PPTX。
 
 目标：
 - 保留原视觉风格
 - 优化赢标主张和章节逻辑
-- 每页改成结论句标题
+- 标题准确表达页面内容，按需要使用具体主题或有依据的结论
 - 补 proof object 建议
 - 同步输出逐字稿 MD
 

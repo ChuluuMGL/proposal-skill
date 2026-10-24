@@ -51,7 +51,7 @@ jobs:
 
           echo "No existing ${TAG}; creating tag + release..."
           gh release create "${TAG}" \
-            --title "proposal-ppt-skill ${TAG}" \
+            --title "proposal-skill ${TAG}" \
             --generate-notes \
             --target "${GITHUB_SHA}"
           echo "Created ${TAG}."

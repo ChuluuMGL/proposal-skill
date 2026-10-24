@@ -1,18 +1,30 @@
-# proposal-ppt-skill
+# proposal-skill
 
-> **赢得比稿的提案写作大脑 —— 顺带把 PPT 也做出来。**
-> 一个开源 AI Agent Skill，把 brief、招标书、调研、预算、案例和执行计划，先变成**一套能赢的论证**：清晰的赢标主张、有证据支撑的页面、可编辑的 `.pptx` 和逐字稿。多数 AI 工具只把 PPT 做漂亮；这个 Skill 先决定**为什么这份方案该赢**，再把 deck 做出来。
+> **一套商业提案方法，支持可编辑 PPT 与交互式 HTML。**
+> 从客户证据出发，串起诊断、策略、案例、交付、排期与报价。保留原有 PPT 设计和终稿精修能力，增加响应式网页、目的明确的交互与分形式验收。
 >
-> 由 **Chuluu** 创建并维护。
+> 由 **Chuluu** 创建并维护。通过真实项目逐步改进，不承诺一次生成就无需修改。
 
 中文 | [English](./README.md)
 
-[![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.5.1-green)](./skill.json)
+[![Skill](https://img.shields.io/badge/AI%20Skill-proposal-0E5E43)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-0.6.0-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
 [![by Chuluu](https://img.shields.io/badge/by-Chuluu-0E5E43)](https://github.com/ChuluuMGL)
+
+### 0.6.0 新增能力
+
+- 统一入口 `$proposal`：共用提案逻辑，PPT 和网页分别组织版式。
+- [诊断与策略、交付、报价的对应检查](references/argument-traceability.md)，以及[匿名修改前后案例](examples/proposal-revisions.md)。
+- [响应式网页流程](references/web-proposals.md)和[按表达目的选择交互](references/web-interactions.md)。
+- [可运行网页组件](templates/web-components/README.md)：循环图、图片放大、排期、询盘演示、同屏价格切换、章节导航和附录展开。它是中性的技术起点，不是已获客户认可的视觉模板。
+- [持续复盘方法](references/iteration-learning.md)：积累通用规则与验证过的组件，客户资料和专属方法留在客户项目。
+
+**旧版迁移：** 原仓库名为 `proposal-ppt-skill`，部分旧元数据使用 `chuluu-proposal-ppt`。新入口统一为 `$proposal`。已有安装先保留本地修改，再更新到本版本并使用单一 `proposal` 技能目录，刷新工具的技能列表；不要同时安装重复的新旧版本。无需改动客户提案仓库或生产网站。
+
+**网页调用示例：** “用 $proposal 根据 brief 制作响应式网页提案。先把诊断与策略、交付对应起来，再选择必要交互，检查桌面、手机和减少动态效果状态。本次不部署。”
 
 ### Demo
 
@@ -31,7 +43,7 @@
 
 ### 风格库一览
 
-客户没有 VI 时，`proposal-ppt` 直接路由到下面 **4 个核心模板家族**。不做"100 种风格"——4 个覆盖完整提案，把精力留给论证而不是视觉兔子洞。
+客户没有 VI 时，`proposal` 直接路由到下面 **4 个核心模板家族**。不做"100 种风格"——4 个覆盖完整提案，把精力留给论证而不是视觉兔子洞。
 
 **核心家族 · 规则覆盖**
 
@@ -52,7 +64,7 @@
 
 ### 这个 Skill 能做什么
 
-`proposal-ppt` 可以把杂乱的提案输入，整理成一套商业提案交付包：
+`proposal` 可以把杂乱的提案输入，整理成一套商业提案交付包：
 
 | 输出 | 内容 |
 |---|---|
@@ -158,7 +170,7 @@ python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --t
 
 - **能跑在哪**：任何能读 `SKILL.md` + 能写文件的环境（Claude Code、Codex、Cursor、Windsurf、Trae、Qoder 等通用 Agent）。Claude Code 和 Codex 已实测；其余理论可用、未逐一验证。
 - **PPTX**：需要后端（`python-pptx` / `pptxgenjs` / Office 自动化 / 宿主 presentation 工具）。
-- **HTML / PDF**：不依赖后端，任何 runtime 都能出——无 PPTX 后端时默认出 HTML 完整 deck，PDF 按需导出。
+- **HTML**：需要文件生成与浏览器验证能力，可选响应式网页或固定画布演示。**PDF** 另需导出或打印后端；用户明确要求 PPTX 时不能擅自替换。
 - **连 HTML 都做不了时**：降级为蓝图、逐页文案、视觉规格。
 
 完整说明见 [`references/runtime-compatibility.md`](./references/runtime-compatibility.md)。
@@ -215,25 +227,25 @@ fallback 模板只在没有客户 VI、没有参考 PPT、也没有明确视觉�
 
 你可以直接对支持代码操作的 AI Agent 说：
 
-> 帮我安装 proposal-ppt skill，仓库地址：https://github.com/ChuluuMGL/proposal-ppt-skill
+> 帮我安装 proposal skill，仓库地址：https://github.com/ChuluuMGL/proposal-skill
 
 ### 手动安装
 
 | Agent / IDE | 建议 Skill 目录 |
 |---|---|
-| Codex | `~/.codex/skills/proposal-ppt/` |
-| Claude Code | `.claude/skills/proposal-ppt/` |
-| Cursor | `.cursor/skills/proposal-ppt/` |
-| Qoder | `.qoder/skills/proposal-ppt/` |
-| Trae | `.trae/skills/proposal-ppt/` |
-| Windsurf | `.windsurf/skills/proposal-ppt/` |
-| 通用 Agent | `.agents/skills/proposal-ppt/` |
+| Codex | `~/.codex/skills/proposal/` |
+| Claude Code | `.claude/skills/proposal/` |
+| Cursor | `.cursor/skills/proposal/` |
+| Qoder | `.qoder/skills/proposal/` |
+| Trae | `.trae/skills/proposal/` |
+| Windsurf | `.windsurf/skills/proposal/` |
+| 通用 Agent | `.agents/skills/proposal/` |
 
 示例：
 
 ```bash
-git clone https://github.com/ChuluuMGL/proposal-ppt-skill.git \
-  ~/.codex/skills/proposal-ppt
+git clone https://github.com/ChuluuMGL/proposal-skill.git \
+  ~/.codex/skills/proposal
 ```
 
 安装后重启你的 Agent，让 Skill 元数据重新加载。
@@ -245,7 +257,7 @@ git clone https://github.com/ChuluuMGL/proposal-ppt-skill.git \
 ### 先生成蓝图，再确认
 
 ```text
-用 $chuluu-proposal-ppt 根据下面 brief 做一份商业提案。
+用 $proposal 根据下面 brief 做一份商业提案。
 
 先不要生成 deck。请先输出：
 1. Brief 审计 + 合规矩阵（逐条拆出评分项，标权重和来源）
@@ -262,7 +274,7 @@ brief:
 ### 直接生成 deck 和逐字稿
 
 ```text
-用 $chuluu-proposal-ppt 直接根据下面 brief 产出：
+用 $proposal 直接根据下面 brief 产出：
 1. 最适合当前 runtime 的提案 deck（有 PPTX 后端则 .pptx，否则 .html）
 2. 同名 Markdown 逐字稿
 3. Brief 合规矩阵（作为附录）
@@ -280,7 +292,7 @@ brief:
 
 - 从客户的业务问题出发，而不是从服务商的服务清单出发。
 - 每页只表达一个判断，并且必须有一个 proof object。
-- 页面标题使用结论句，而不是空泛名词。
+- 页面标题直接说明内容，按需要选择具体主题或有依据的结论，不强行写口号。
 - 把推理、讲述逻辑和口播放进逐字稿，不把长段解释塞进 PPT 页面。
 - 不编造数据、案例、奖项、平台权限、报价或效果结果。
 - 明确标注未知信息，而不是隐藏或脑补。
@@ -300,7 +312,7 @@ brief:
 A：这是 AI Skill。内置 PPTX 只是中性 fallback 模板，核心价值是提案工作流、页型规划、proof object 逻辑和逐字稿结构。
 
 **Q：它会自动生成 PPTX 吗？**  
-A：可以，但需要在支持创建或编辑 PowerPoint 的 Agent 环境中使用，例如宿主 presentation tool、`python-pptx`、`pptxgenjs`、Office-compatible exporter 或 PowerPoint / Keynote / LibreOffice 自动化。没有 PPTX 后端时，应优先输出完整 HTML deck，而不是假装已经生成 PowerPoint。
+A：可以，但需要在支持创建或编辑 PowerPoint 的 Agent 环境中使用，例如宿主 presentation tool、`python-pptx`、`pptxgenjs`、Office-compatible exporter 或 PowerPoint / Keynote / LibreOffice 自动化。没有 PPTX 后端时，说明限制并提供 HTML 等替代路线；用户明确要求 PPTX 时须先确认替代格式。
 
 **Q：需要 MCP 服务器吗？**  
 A：不需要。这是本地 Skill 包，不是 MCP Server。
@@ -320,10 +332,10 @@ A：可以，只要对应 Agent 支持 Skill 文件夹，或能读取 `SKILL.md`
 
 | 项目 | 说明 |
 |---|---|
-| Skill 名称 | `chuluu-proposal-ppt` |
-| 仓库 | `ChuluuMGL/proposal-ppt-skill` |
+| Skill 名称 | `proposal` |
+| 仓库 | `ChuluuMGL/proposal-skill` |
 | 形态 | 本地 Skill 文件夹，包含 `SKILL.md`、references、assets 和 metadata |
-| 主要输出 | `.pptx` + `.md` |
+| 主要输出 | 可编辑 PPTX 或交互 HTML、PDF 导出及 Markdown 主讲稿 |
 | 内置资产 | 中性 fallback PowerPoint 模板 |
 | PPTX 生成 | 依赖宿主 Agent 的 presentation / PPTX 后端 |
 | License | MIT |
@@ -352,10 +364,10 @@ MIT. Copyright (c) 2026 Chuluu.
 <!-- {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "proposal-ppt-skill",
+  "name": "proposal-skill",
   "alternateName": "商业提案 PPT Skill",
   "description": "开源 AI Agent Skill，用于根据 brief、调研、预算、案例和执行计划生成阶段化商业提案 deck、视觉系统卡与逐字稿。",
-  "url": "https://github.com/ChuluuMGL/proposal-ppt-skill",
+  "url": "https://github.com/ChuluuMGL/proposal-skill",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
   "offers": {
@@ -369,5 +381,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.5.1"
+  "softwareVersion": "0.6.0"
 } -->

@@ -4,6 +4,8 @@ Use this guide to prevent proposal decks from becoming visually crowded, top-hea
 
 ## Core Principle
 
+For fixed-canvas slide composition (PPTX or staged HTML); responsive web layouts also need `web-proposals.md`. Ratios below are heuristics, not fill quotas.
+
 A business proposal should alternate between evidence and persuasion. Dense proof pages build credibility; breathing pages make the decision easy to remember.
 
 Do not fill every page with cards, tables, and small text. Do not leave dead space by accident.
@@ -64,7 +66,7 @@ Use the full content field deliberately.
   - or split/rewrite the slide.
 - Do not add a blank rectangle, media frame, or border only to fill space.
 - Avoid orphan groups: no single small table or card cluster should sit in one area while the rest of the canvas is visually dead.
-- Use optical balance: a sparse left side needs a visual anchor on the right; a heavy top needs a grounded lower conclusion or proof band.
+- Use optical balance: balance related content along clear axes. A single-column layout or deliberate whitespace may be better than adding a right-hand visual.
 - Do not solve empty space with a decorative border or blank media frame. The added element must be proof, conclusion, navigation, source status, or an intentional visual anchor.
 - Keep internal safety distance inside tables, ledgers, cards, and column modules. Text should sit at least 18-24 px away from dividers, borders, and vertical rules. If a divider touches or nearly touches the first character of a column, the page fails detail QA even when there is no formal overlap.
 
@@ -74,7 +76,7 @@ These rules exist because hand-tuned absolute positioning and long CJK lines are
 
 ### Prefer document flow over absolute coordinates
 
-- Default to normal document flow (`block`, `flex`, `grid`) for the page skeleton. Elements that flow cannot overlap or reverse order by construction.
+- Default to normal document flow (`block`, `flex`, `grid`) for the page skeleton. Flow reduces positioning drift; oversized content, transforms, sticky elements and fixed headers can still overlap and need rendered checks.
 - Reserve absolute positioning for chrome and decoration only (page frame, folio, eyebrow, decorative rules, a signature mark). Do not build the primary content table, ledger, or column layout out of absolutely-positioned siblings.
 - If two content blocks must sit side by side, use a flex/grid row, not two independent `position: absolute` boxes with hand-calculated x/y. Hand-calculated coordinates drift; flex gutters do not.
 - Never put a data table or repeated row set inside a flex container with default `align-items: stretch` and a `flex:1` child — this can pull the header out of order. Tables belong in normal block flow.

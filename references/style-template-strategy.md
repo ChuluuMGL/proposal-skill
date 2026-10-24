@@ -46,7 +46,7 @@ Preview rules:
 - Do not scale to a full deck until the user selects a direction or the three-page gate passes.
 - If a large template library is available, shortlist from compact metadata first; load full design rules only for the chosen family.
 
-This gate is inspired by visual-first slide workflows such as `frontend-slides`, but proposal-ppt must keep business proof, budget, KPI, risk, and presenter-script requirements above motion or decorative style.
+This gate is inspired by visual-first slide workflows such as `frontend-slides`, but proposal must keep business proof, budget, KPI, risk, and presenter-script requirements above motion or decorative style.
 
 ## Public Template Families
 

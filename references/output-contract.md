@@ -10,7 +10,7 @@ A proposal deliverable = a **deck** + a **presenter script (`.md`)**. The deck h
 
 Never silently swap formats. If the user asked for PPTX but only HTML/PDF is producible, state it explicitly and let them choose — do not relabel an HTML deck as a finished PPTX, and do not treat HTML/PDF as a mere "fallback" when the user requested it.
 
-The presenter script `.md` and the missing-information list are always required, regardless of deck format.
+Full creation includes the presenter script `.md` and unresolved inputs unless the user declines them. For narrow edits synchronize affected sections rather than rebuilding unrelated deliverables.
 
 For any brief / tender / RFP response, a **Brief Compliance Matrix** (`references/brief-compliance.md`) is also required — a table mapping every brief requirement to the slide + proof that addresses it. If even an HTML deck is not possible, fall back to blueprint / copy-and-script / template-spec per `runtime-compatibility.md` and label the package accordingly.
 
@@ -42,7 +42,7 @@ Use clear names:
 
 - `<client-or-project>-proposal.pptx` / `.html` / `.pdf`
 - `<client-or-project>-proposal-script.md`
-- for HTML: a self-contained `<...>-proposal.html` (single file preferred), plus an optional `<...>-3up.png` contact sheet for quick preview
+- for HTML: a staged single-file deck or a responsive project folder with relative assets, as appropriate; include preview evidence
 
 If the user specifies a folder, use it. Otherwise create an `outputs/` folder under the active workspace or another project-appropriate output directory.
 
@@ -67,21 +67,18 @@ The deck must include, unless the user asks for a different format:
 
 For lightweight proposals, combine items, but do not omit the commercial logic.
 
-## HTML Deck Contract
+## HTML Contract
 
-When the deck is HTML (chosen format, or the default when no PPTX backend exists):
+Choose the mode before building:
+- **Staged deck:** self-contained HTML when useful, a fixed slide ratio (usually 16:9), flow-based content within each stage, contact-sheet and full-size previews.
+- **Responsive web proposal:** semantic sections in document order, phone reflow, optional scoped sticky scenes, gallery/video/dialogs and appendices. Split CSS/JS/media into relative assets as needed; do not embed large video in a single file. Read `web-proposals.md` and `web-interactions.md`.
 
-- One self-contained `.html` file (inline CSS; web fonts via CDN or system stacks) so it opens by double-click with no server.
-- Fixed 16:9 stage (1920×1080 design canvas) that scales to fit the viewport; one `<section class="slide-shell">` per slide, in document order — flow-first layout, no absolute-positioned content tables, no overlap, no reverse (see `layout-rhythm.md`).
-- Business text stays as **real selectable text**, never flattened to images. Charts are inline SVG with real data points and labels, not decorative doodles.
-- Carry the same proof objects, density rhythm, and page chrome (brand bar, page numbers, source footer) a PPTX would — an HTML deck is a full proposal, not a sketch.
-- Ship a contact-sheet PNG (`<...>-3up.png`) next to the HTML for preview/README embedding.
-
-HTML is a legitimate primary deliverable for web-presented, animated, or high-fidelity proposals — not a downgrade of PPTX.
+Keep business text selectable. Diagrams must express actual relationships; concept visuals must not masquerade as evidence. Record the chosen mode, local run instructions, asset provenance, tested viewports, interaction results and unverified environments. Login/deployment are optional project work and require appropriate scope and real server verification.
 
 ## PDF Contract
 
-- Export the PDF from the finished HTML (headless print, one page per slide, 16:9) or from the PPTX. Do not hand-layout a separate PDF that drifts from the source deck.
+- Export the PDF from the finished HTML (print layout appropriate to the source, usually one page per slide for staged decks) or from the PPTX. Do not hand-layout a separate PDF that drifts from the source deck.
+- For responsive sources, expose collapsed and alternate states, disable sticky/motion, and inspect page breaks; do not promise editable PPTX by printing HTML.
 - Preserve text as vector (selectable), not raster, so figures and names stay copyable.
 - The source deck (HTML or PPTX) remains the single source of truth; the PDF is a render of it.
 
@@ -142,7 +139,7 @@ By default, deliverables carry **no** skill or author credit — a client propos
 
 When the user is sharing a deck publicly (portfolio, open demo, conference talk) and wants to help the skill spread, they may enable a single, removable footer line on the **closing slide only**:
 
-> *Made with the proposal-ppt skill · github.com/ChuluuMGL/proposal-ppt-skill*
+> *Made with the proposal skill · github.com/ChuluuMGL/proposal-skill*
 
 Rules: off by default; closing slide only; one line; fully removable; never on client-facing bid/tender decks unless the user opts in. This is the only sanctioned attribution — no watermarks, no logos, no hidden metadata.
 

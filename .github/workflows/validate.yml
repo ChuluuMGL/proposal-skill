@@ -41,7 +41,7 @@ jobs:
       - name: Node scripts parse
         run: |
           set -euo pipefail
-          for f in scripts/*.mjs; do
+          for f in scripts/*.mjs templates/web-components/components.js; do
             node --check "$f"
             echo "ok: $f"
           done

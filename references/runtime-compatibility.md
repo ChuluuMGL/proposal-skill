@@ -96,3 +96,7 @@ Before final delivery, state:
 - whether `.pptx` was opened/rendered or only structurally checked,
 - any downgraded deliverables,
 - unresolved environment limitations.
+
+## Responsive HTML branch
+
+HTML authoring needs file-writing capability; behavioral/visual acceptance needs a supported browser runtime. PDF needs a print/export backend. Responsive HTML is not constrained to the fixed-stage demo engine. If a requested PPTX backend is absent, disclose this and agree an alternative; only unspecified formats may default to HTML. See web-proposals.md for deployed/real-device evidence boundaries.

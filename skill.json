@@ -1,18 +1,21 @@
 {
-  "name": "chuluu-proposal-ppt",
-  "display_name": "提案PPT助手",
-  "description": "面向提案、比稿、投标、路演和方案汇报的 PPT 策划、写作、设计、编辑与质检助手；新增终稿精修模式，保护人工修改、消化逐页反馈，并分层验收 PPTX/HTML/PDF 与逐字稿。",
-  "version": "0.5.1",
+  "name": "proposal",
+  "display_name": "商业提案 · PPT 与网页",
+  "description": "商业提案策划、写作、设计与精修：共用诊断到交付的论证逻辑，分别输出可编辑 PPT、交互式 HTML 和 PDF，包含主讲稿、网页组件及分层验收。",
+  "version": "0.6.0",
   "author": {
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "output_formats": ["pptx", "html", "pdf"],
+  "output_formats": [
+    "pptx",
+    "html",
+    "pdf"
+  ],
   "license": "MIT",
-  "repository": "https://github.com/ChuluuMGL/proposal-ppt-skill",
+  "repository": "https://github.com/ChuluuMGL/proposal-skill",
   "category": "business",
   "keywords": [
-    "proposal-ppt",
     "business proposal",
     "proposal deck",
     "pitch deck",
@@ -40,7 +43,12 @@
     "方案PPT",
     "风格模板",
     "视觉资产",
-    "逐字稿"
+    "逐字稿",
+    "proposal",
+    "interactive HTML proposal",
+    "responsive proposal",
+    "argument traceability",
+    "网页提案"
   ],
   "related_skills": [
     {
@@ -78,7 +86,9 @@
       "This skill is not a standalone PPTX rendering engine.",
       "Editable PPTX generation requires a host presentation backend.",
       "Image generation requires a user-configured provider or runtime tool.",
-      "Strong visual styles require full-size visual review before client delivery."
+      "Strong visual styles require full-size visual review before client delivery.",
+      "Responsive behavior starter is not a complete client proposal or authentication backend.",
+      "HTML interactions require separate PPT layouts; browser QA does not establish real-device or customer acceptance."
     ]
   },
   "runtime_requirements": {

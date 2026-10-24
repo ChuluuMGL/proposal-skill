@@ -6,7 +6,7 @@ Reusable, flow-based slide templates for proposal demos. Each family is one
 ## Why flow-based
 
 The page skeleton uses normal document flow (`flex` / `grid`) so elements
-**cannot overlap or reverse order by construction**. Absolute positioning is
+**reduce positioning drift** (transforms, oversized content and sticky elements still require visual checks). Absolute positioning is
 reserved for chrome and decoration only. This is the lesson from
 `references/layout-rhythm.md` → "Text Flow and Overlap Prevention": hand-tuned
 absolute coordinates drift and overlap; flex gutters do not.
@@ -55,3 +55,7 @@ agent self-review miss. Aesthetic balance still needs a human eye.
 Before using a family in a real deck, load the matching file under
 `style-specs/` and convert it into the project-specific visual system card from
 `references/visual-system-card.md`.
+
+## Responsive interaction starter
+
+For scroll-based web proposals, use [web-components](web-components/README.md) selectively. It is a neutral behavior starter with its own responsive CSS, not another fixed-stage theme or an approved visual showcase.

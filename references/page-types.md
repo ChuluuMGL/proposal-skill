@@ -7,7 +7,7 @@ Use this as a page-planning library. Every proposal slide needs a page purpose a
 For each slide, plan:
 
 - `slide_no`
-- `title`: conclusion sentence
+- `title`: precise subject or evidenced conclusion
 - `page_purpose`: what the client should decide or believe
 - `key_message`: one sentence
 - `proof_object`: visible evidence or structured object
@@ -27,7 +27,7 @@ Avoid: crowded credentials, multiple slogans, generic hero copy.
 
 ### Brief Translation
 
-Purpose: prove the team understood the real purchase criteria.
+Purpose: prove the team understood the real decision criteria.
 
 Proof object: table mapping `client requirement -> our interpretation -> proposal response -> evidence/slide`.
 
