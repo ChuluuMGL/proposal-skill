@@ -3,7 +3,7 @@
 > 适用：Chuluu 名下所有 AI Agent skill（`proposal-ppt`、`business-website` 及未来新增）。
 > 目标：署名、License、`skill.json`、README 框架、交叉导流在所有 skill 之间完全一致，全局只出现 **Chuluu**，不出现公司名。
 
-> **本规范自身的放置**：每个 skill 根目录放一份 `AUTHOR-SPEC.md`（canonical 也可放 `ChuluuMGL/.github` profile 仓库）。本文档已按此规范放在 `proposal-ppt-skill/AUTHOR-SPEC.md`。
+> **本规范自身的放置**：每个 skill 根目录放一份 `AUTHOR-SPEC.md`（canonical 也可放 `ChuluuMGL/.github` profile 仓库）。本文档已按此规范放在 `proposal-skill/AUTHOR-SPEC.md`。
 
 ---
 
@@ -83,10 +83,10 @@ SOFTWARE.
 
 每个 skill 的 Related 都列另外的 Chuluu skill，描述统一：
 
-- `proposal-ppt-skill` — 阶段化商业提案 deck 和逐字稿。https://github.com/ChuluuMGL/proposal-ppt-skill
+- `proposal-skill` — 商业提案逻辑、PPT 与交互式网页、主讲稿。https://github.com/ChuluuMGL/proposal-skill
 - `business-website-skill` — 长期营销官网。https://github.com/ChuluuMGL/business-website-skill
 
-复用关系写明：proposal-ppt 和 business-website 共享"客户资料 → 提案 deck + 官网"的素材复用。新增 skill 上线时，把它加进所有已有 skill 的 Related 列表。
+复用关系写明：proposal 和 business-website 共享"客户资料 → 提案 deck + 官网"的素材复用。新增 skill 上线时，把它加进所有已有 skill 的 Related 列表。
 
 ## 6. 署名行（README 末尾的 Technical Specs 表）
 
@@ -120,6 +120,6 @@ SOFTWARE.
 
 ## 落地清单
 
-- [x] `proposal-ppt-skill`：`author: Chuluu`（对象）、LICENSE `© Chuluu`、README Author 行 `Chuluu`、无公司痕迹。本地 v0.3.0 已就绪，待 commit + push 覆盖线上 v0.1.7。
+- [x] 历史 v0.3.0 记录（现已更名为 `proposal-skill`）：`author: Chuluu`（对象）、LICENSE `© Chuluu`、README Author 行 `Chuluu`、无公司痕迹。本地 v0.3.0 已就绪，待 commit + push 覆盖线上 v0.1.7。
 - [ ] `business-website-skill`：按本规范核对 author/license/README 框架/Related，清掉任何公司名。
 - [ ] 每个新增 skill 发布前对照本规范逐条检查。
